@@ -85,13 +85,13 @@ class admin extends ecjia_admin
 
         /* 处理url */
         if (!empty($link_url)) {
-            if (strpos($link_url, 'http://') === false) {
+            if (strpos($link_url, 'http://') === false && strpos($link_url, 'https://') === false) {
                 $link_url = 'http://' . $link_url;
             } else {
                 $link_url = trim($link_url);
             }
         }
-
+	
         /* 查看名称是否有重复 */
         $query = RC_DB::table('friend_link')->where('link_name', $link_name)->count();
         if ($query != 0) {
@@ -175,7 +175,7 @@ class admin extends ecjia_admin
 
         /* 处理url */
         if (!empty($link_url)) {
-            if (strpos($link_url, 'http://') === false) {
+        	if (strpos($link_url, 'http://') === false && strpos($link_url, 'https://') === false) {
                 $link_url = 'http://' . $link_url;
             } else {
                 $link_url = trim($link_url);
