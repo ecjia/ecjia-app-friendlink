@@ -14,20 +14,20 @@
         {if $action_link}
 		<a href="{$action_link.href}" class="btn data-pjax plus_or_reply" ><i class="fontello-icon-plus"></i>{$action_link.text}</a>
 		{/if}
-   	</h3>		
+   	</h3>
 </div>
-	
+
 <div class="row-fluid">
 	<div class="btn-group f_l m_r5">
 		<a class="btn dropdown-toggle" data-toggle="dropdown" href="">
 			<i class="fontello-icon-cog"></i>{lang key='friendlink::friend_link.batch_handle'}
 			<span class="caret"></span>
-		</a>	
+		</a>
 		<ul class="dropdown-menu">
 			<li><a data-toggle="ecjiabatch" data-idClass=".checkbox:checked" data-url="{$form_action}&type=remove" data-msg="{lang key='friendlink::friend_link.batch_drop_confirm'}" data-noSelectMsg="{lang key='friendlink::friend_link.select_drop_link'}" href="javascript:;"><i class="fontello-icon-trash"></i>{lang key='system::system.drop'}</a></li>
 		</ul>
 	</div>
-		
+
 	<!-- 搜索 -->
 	<form class="f_r form-inline" method="post" action="{$search_action}" name="searchForm">
 		<div class="choose_list f_r" >
@@ -36,7 +36,7 @@
 		</div>
 	</form>
 </div>
-	
+
 <div class="row-fluid">
 	<div class="span12">
 		<form method="POST" action="{$form_action}" name="listForm" data-pjax-url="{RC_Uri::url('adsense/admin/init')}">
@@ -54,9 +54,9 @@
                  	<!-- {foreach from=$list.list item=link} -->
                     <tr>
                     	<td class="center-td">
-				      		<input class="checkbox" type="checkbox" name="checkboxes[]"  value="{$link.link_id}" />
+				      		<input class="checkbox" type="checkbox" name="checkboxes[]" value="{$link.link_id}" />
 				    	</td>
-				    	<td><span>{$link.link_logo_html}</span></td> 
+				    	<td><span>{$link.link_logo_html}</span></td>
                       	<td class="hide-edit-area hide_edit_area_bottom">
                       		<span class="cursor_pointer" data-text="text" data-trigger="editable" data-url="{RC_Uri::url('friendlink/admin/edit_link_name')}" data-name="link_name" data-pk="{$link.link_id}" data-title="{lang key='friendlink::friend_link.edit_link_name'}" >{$link.link_name}</span>
                       		<br>
@@ -75,8 +75,8 @@
 			    	<!-- {/foreach} -->
 	            </tbody>
 			</table>
-        	<!-- {$list.page} -->	
+        	<!-- {$list.page} -->
     	</form>
-    </div>    
-</div>                 
+    </div>
+</div>
 <!-- {/block} -->

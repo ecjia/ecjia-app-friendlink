@@ -1,5 +1,6 @@
 // JavaScript Document
-;(function (app, $) {
+;
+(function (app, $) {
     app.list = {
         init: function () {
             //搜索功能
@@ -7,12 +8,12 @@
                 e.preventDefault();
                 var url = $("form[name='searchForm']").attr('action');
                 var keywords = $("input[name='keywords']").val();
-                if (keywords != '') {
+                if (keywords != '' && keywords != undefined) {
                     url += '&keywords=' + keywords;
                 }
                 ecjia.pjax(url);
             });
- 
+
             $('.toggle_view').on('click', function (e) {
                 e.preventDefault();
                 var $this = $(this);
@@ -52,7 +53,7 @@
             });
         },
     };
- 
+
     /* **编辑** */
     app.edit = {
         init: function (get_value) {
@@ -61,7 +62,7 @@
                 $('#show_src').css("display", "none");
                 $("#show_local").css("display", "block");
             }
- 
+
             $("input[name='link_logo']").click(function () {
                 var brand_type = $(this).val();
                 if (brand_type == 0) {
@@ -72,10 +73,10 @@
                     $("#show_local").css("display", "block");
                 }
             });
- 
+
             app.edit.submit_form();
         },
- 
+
         submit_form: function (formobj) {
             var $form = $("form[name='theForm']");
             var option = {
@@ -108,7 +109,7 @@
             $form.validate(options);
         },
     };
-    
+
 })(ecjia.admin, jQuery);
- 
+
 // end
