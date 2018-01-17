@@ -353,7 +353,7 @@ class admin extends ecjia_admin
 
         $count = $db_friendlink->count();
         $page = new ecjia_page($count, 10, 5);
-        $data = $db_friendlink->orderBy('show_order', 'asc')->take(10)->skip($page->start_id - 1)->get();
+        $data = $db_friendlink->orderBy('show_order', 'asc')->orderBy('link_id', 'desc')->take(10)->skip($page->start_id - 1)->get();
 
         $list = array();
         if (!empty($data)) {
