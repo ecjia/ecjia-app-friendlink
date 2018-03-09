@@ -17,6 +17,11 @@ class friendlink_friendlink_list_api extends Component_Event_Api
      */
     public function call(&$options)
     {
+        //检测友情链接应用是否安装，未安装返回空数据
+        if (!ecjia_app::is_active('ecjia.friendlink')) {
+            return new ecjia_error('app_not_installed', '检测到友情链接应用未安装');
+        }
+        
         $type = array_get($options, 'type', 'all');
         
         $link_list = RC_DB::table('friend_link')->where('status', 0)->orderBy('show_order', 'asc')->get();
