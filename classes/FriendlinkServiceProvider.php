@@ -2,9 +2,9 @@
 
 namespace Ecjia\App\Friendlink;
 
-use Royalcms\Component\App\AppServiceProvider;
+use Royalcms\Component\App\AppParentServiceProvider;
 
-class FriendlinkServiceProvider extends  AppServiceProvider
+class FriendlinkServiceProvider extends  AppParentServiceProvider
 {
     
     public function boot()
