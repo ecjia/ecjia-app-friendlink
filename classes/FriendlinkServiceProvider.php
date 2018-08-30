@@ -9,7 +9,7 @@ class FriendlinkServiceProvider extends  AppParentServiceProvider
     
     public function boot()
     {
-        $this->package('ecjia/app-friendlink');
+        $this->package('ecjia/app-friendlink', null, dirname(__DIR__));
     }
     
     public function register()
