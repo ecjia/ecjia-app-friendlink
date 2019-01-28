@@ -25,7 +25,7 @@
 				<label class="control-label">{t domain="friendlink"}链接名称：{/t}</label>
 				<div class="controls ">
 					<input class="w350" name="link_name" type="text" value="{$link.link_name}" size="40" class="span4" />
-					<span class="input-must">{lang key='system::system.require_field'}</span>
+					<span class="input-must"><span class="require-field" style="color:#FF0000,">*</span></span>
 				</div>
 			</div>
 
@@ -33,7 +33,7 @@
 				<label class="control-label">{t domain="friendlink"}链接地址：{/t}</label>
 				<div class="controls">
 					<input class="w350" name="link_url" type="text" value="{$link.link_url}" size="40" class="span4" />
-					<span class="input-must">{lang key='system::system.require_field'}</span>
+					<span class="input-must"><span class="require-field" style="color:#FF0000,">*</span></span>
 				</div>
 			</div>
 
